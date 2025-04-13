@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>E-Shop | Home</title>
+  <link rel="stylesheet" href="style/index.css" />
+</head>
+<div id="toast" class="toast hidden">Item added to cart</div>
+<body>
+  <header>
+    <div class="logo">
+      <img src="assets/logo.jpg" alt="E-Shop Logo">
+      <h1>E-Shop</h1>
+    </div>
+    <div class="search-filter">
+      <input type="text" id="searchInput" placeholder="Search products...">
+      <select id="categoryFilter">
+        <option value="all">All Categories</option>
+      </select>
+      <select id="sortSelect">
+        <option value="">Sort By</option>
+        <option value="price-low">Price: Low to High</option>
+        <option value="price-high">Price: High to Low</option>
+        <option value="name-az">Name A-Z</option>
+      </select>
+    </div>
+    
+    </div>
+    <div class="actions">
+      <button id="themeToggle">🌓</button>
+      <button id="wishlistBtn">❤️</button>
+      <button id="cartBtn">🛒 (<span id="cartCount">0</span>)</button>
+    </div>
+  </header>
+  <main>
+    <div id="productGrid"></div>
+  </main>
+
+  <!-- Cart Modal -->
+  <div id="cartModal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close" onclick="toggleCart()">×</span>
+      <h2>Your Cart</h2>
+      <div id="cartItems"></div>
+      <h3>Total: $<span id="cartTotal">0</span></h3>
+      <button onclick="checkout()">Buy Now</button>
+    </div>
+  </div>
+
+
+  <!-- Wishlist Modal -->
+  <div id="wishlistModal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close" onclick="toggleWishlist()">×</span>
+      <h2>Your Wishlist</h2>
+      <div id="wishlistItems"></div>
+    </div>
+  </div>
+
+  <script src="script/index.js"></script>
+</body>
+</html>
